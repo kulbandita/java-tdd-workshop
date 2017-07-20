@@ -4,7 +4,7 @@ public class FormatPhoneNumber {
         String digit = "";
         int length = input.length();
         for (int i = 0; i < length; i++) {
-            if (input.charAt(i) != '-') {
+            if (input.charAt(i) != '-' && input.charAt(i) != ' ') {
                 digit += input.charAt(i);
             }
         }
