@@ -12,11 +12,11 @@ public class FormatPhoneNumber {
     }
 
     public String solution(String input) {
-        StringBuilder phoneNumber = new StringBuilder(input);
+        StringBuilder phoneNumber = new StringBuilder(removeNonDigit(input));
         int length = input.length();
 
         for (int i = 0; i < length; i++) {
-            if(i == 3 || i == 7){
+            if(i == 3 || i == 7 || i == 11 || i == 15){
                 phoneNumber.insert(i, "-");
             }
         }
