@@ -7,6 +7,11 @@ public class PrimeFactor {
 
         if (number == 2 || number == 3) {
             primeNumber.add(number);
+        } else {
+            if (number % 2 == 0) {
+                primeNumber.add(2);
+                primeNumber.add(number / 2);
+            }
         }
 
         return primeNumber;
