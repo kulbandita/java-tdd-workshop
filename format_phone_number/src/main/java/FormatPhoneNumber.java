@@ -12,15 +12,27 @@ public class FormatPhoneNumber {
     }
 
     public String solution(String input) {
-        StringBuilder phoneNumber = new StringBuilder(removeNonDigit(input));
-        int length = input.length();
+        String phoneNumber = "";
+        String digit = removeNonDigit(input);
+        int length = digit.length();
+        int remain = length;
 
         for (int i = 0; i < length; i++) {
-            if(i == 3 || i == 7 || i == 11 || i == 15){
-                phoneNumber.insert(i, "-");
+            if (remain < 4 && length % 3 == 1) {
+                phoneNumber += digit.charAt(i);
+                remain--;
+                if (remain == 2) {
+                    phoneNumber += "-";
+                }
+            } else {
+                if (i % 3 == 0 && i != 0) {
+                    phoneNumber += "-";
+                }
+                phoneNumber += digit.charAt(i);
+                remain--;
             }
         }
-        return phoneNumber.toString();
+        return phoneNumber;
     }
 
 }
