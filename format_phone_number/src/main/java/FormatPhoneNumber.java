@@ -12,7 +12,15 @@ public class FormatPhoneNumber {
     }
 
     public String solution(String input) {
-        return null;
+        StringBuilder phoneNumber = new StringBuilder(input);
+        int length = input.length();
+
+        for (int i = 0; i < length; i++) {
+            if(i == 3 || i == 7){
+                phoneNumber.insert(i, "-");
+            }
+        }
+        return phoneNumber.toString();
     }
 
 }
