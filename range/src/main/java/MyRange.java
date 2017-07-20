@@ -7,11 +7,13 @@ public class MyRange {
         return 0;
     }
 
-    public boolean isก้ามปูปิด(String input) { return false; }
+    public boolean isก้ามปูปิด(String input) {
+        return input.endsWith("]");
+    }
 
     public int getFirstNumber(String input) {
         int firstNumber = Character.getNumericValue(input.charAt(1));
-        if (isก้ามปูเปิด(input)){
+        if (isก้ามปูเปิด(input)) {
             return firstNumber;
         }
         return firstNumber + 1;
